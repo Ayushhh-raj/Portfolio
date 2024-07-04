@@ -1164,9 +1164,11 @@ img {
   .button--white {
     bottom: -4.5rem;
   }
-  .about__buttons{
+ 
+}
+ .about__buttons{
   height: 10px;
   margin-top: 80px;
+   margin-left: 15px;
   
-}
 }
