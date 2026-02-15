@@ -544,75 +544,89 @@ img {
 
 /*==================== Qualifications ====================*/
 
-.qualification__tabs {
+/* ================= Qualification Tabular Layout ================= */
+
+.qualification__container {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: var(--mb-2);
+  flex-direction: column;
+  width: 1300px;   /* fixed width */
+  margin: 0 auto;      /* center horizontally */
+  padding: 40px 40px; 
 }
 
-.qualification__button {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-  cursor: pointer;
+/* Make qualification content horizontal */
+.qualification__content {
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  border: 1rem;
+  flex-wrap: wrap;
 }
 
-.qualification__button:hover {
-  color: var(--first-color);
-}
-
-.qualification__icon {
-  font-size: 1.8rem;
-  margin-right: var(--mb-0-25);
-}
-
+/* Each qualification box */
 .qualification__data {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  column-gap: 1.5rem;
+  flex: 1 1 22%;   /* 4 items in one row */
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  max-width: 250px;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s;
 }
 
+/* Hover effect */
+.qualification__data:hover {
+  transform: translateY(-5px);
+}
+
+/* Hide timeline elements */
+.qualification__rounder,
+.qualification__line {
+  display: none;
+}
+
+/* Typography */
 .qualification__title {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
+  margin-bottom: 0.5rem;
 }
 
 .qualification__subtitle {
-  display: inline-block;
+  display: block;
   font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
 }
 
 .qualification__calender {
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
+  margin-bottom: 0.5rem;
 }
 
-.qualification__rounder {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  background-color: var(--first-color);
-  border-radius: 50%;
-}
-
-.qualification__line {
-  display: block;
-  width: 1px;
-  height: 100%;
-  background-color: var(--first-color);
-  transform: translate(6px, -7px);
-}
-
-.qualification [data-content] {
-  display: none;
-}
-
-.qualification__active[data-content] {
-  display: none;
+/* Tabs */
+.qualification__tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--mb-2);
 }
 
 .qualification__button.qualification__active {
   color: var(--first-color);
 }
+
+/* Content visibility fix */
+.qualification [data-content] {
+  display: none;
+}
+
+.qualification__content.qualifiation__active {
+  display: flex;
+}
+
+
 
 /*================= Services ==================*/
 
